@@ -1,3 +1,9 @@
+require 'pusher'
+
+Pusher.app_id = '73228'
+Pusher.key = '71fe6b8d1e8fcac678ce'
+Pusher.secret = 'a160b1186bf9d281901d'
+
 Pusher::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 

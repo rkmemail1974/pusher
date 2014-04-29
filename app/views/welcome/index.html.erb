@@ -1,3 +1,14 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Example</title>
+    </head>
+    <body>
+    
+    <button id="send">SEND</button>
+    <button id="bind">BIND</button>
+    <p id="p1">This is before text</p>
+
 <script src="http://js.pusher.com/2.0/pusher.min.js"></script>
  <script type="text/javascript">
  // If your Heroku application is within the EU region,
@@ -10,4 +21,21 @@
  channel.bind('greet', function(data) {
    alert(data.greeting);
  });
+ 
+ channel.bind('binding', function(data) {
+  document.getElementById("p1").innerHTML = "This is after binding text!";
+  });
+
+
+ document.getElementById("bind").onclick = bindPress;
+  
+ function bindPress() {
+   
+   $.get('/welcome/binding', function(data){});
+   
+    }
+ 
  </script>
+ 
+    </body>
+</html>
